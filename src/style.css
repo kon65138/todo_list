@@ -1,5 +1,10 @@
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+button {
+    all: unset;
 }
 
 html {
@@ -17,35 +22,49 @@ body {
     background-color: #ecfeff;
     display: flex;
     flex-direction: column;
-    font-size: 1.5rem
 }
 
 .user {
     font-size: 3rem;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
-.newTask {
-    margin-bottom: 3rem;
+.sidebar > .label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 3rem 1rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.newProject {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 10px;
+}
+
+.newProject:hover {
+    background-color: rgb(173, 189, 190);
 }
 
 .sBtn {
-    width: 70%;
     height: 3rem;
     font-size: 1rem;
+    padding-left: 2rem;
 }
 
-.sorting {
-    margin: 1rem 0 3rem 0;
-    display: flex;
-    flex-direction: column;
+.sBtn:hover {
+    background-color: rgb(173, 189, 190);
 }
 
-.projects {
-    margin: 1rem 0 3rem 0;
+.sorting, .projects {
     display: flex;
     flex-direction: column;
-
 }
 
 .mainContent {
