@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    margin: 0;
+}
+
+.sidebar {
+    background-color: #ecfeff;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem
+}
+
+.user {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.newTask {
+    margin-bottom: 3rem;
+}
+
+.sBtn {
+    width: 70%;
+    height: 3rem;
+    font-size: 1rem;
+}
+
+.sorting {
+    margin: 1rem 0 3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects {
+    margin: 1rem 0 3rem 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.mainContent {
+    background-color: #a5f3fc;
+}
