@@ -11,6 +11,7 @@
         <button class="newTask sBtn"><div>New List</div></button>
         <div class="label"><div>Sorting</div></div>
         <div class="sorting">
+            <button class="next7D sBtn"><div>next 7 days</div></button>
             <button class="allTasks sBtn"><div>All lists</div></button>
             <button class="today sBtn"><div>Today</div></button>
             <button class="upcoming sBtn"><div>Upcomming</div></button>
@@ -18,11 +19,48 @@
         </div>
         <div class="label"><div>Projects</div><button class="newProject">+</button></div>
         <div class="projects" >
-            <button class="default sBtn"><div>Default</div></button>
+            <button class="default sBtn"><div>Daily</div></button>
         </div>
-        
-
     </div>
-    <div class="mainContent"></div>
+    <div class="mainContent">
+        <div class="nxt7days">
+            <div class="day1">
+                <div class="header">
+                    <div class="title">Today</div>
+                    <div class="date">18/06/2024</div>
+                </div>
+                <div class="tasks"></div>
+                <div class="inpOptions">
+                    <div class="date">
+                        <button class="date">date</button>
+                    </div>
+                    <div class="priority">
+                        <button class="prio">p tag</button>
+                    </div>
+                </div>
+                <div class="textInput">
+                    <input type="text" placeholder="add task">
+                </div>
+            </div>
+            <div class="day2">
+                <div class="header">
+                    <div class="title">tommorow</div>
+                    <div class="date">19/06/2024</div>
+                </div>
+                <div class="tasks"></div>
+                <div class="newTask">
+                    <div class="date">
+                        <button class="date">date</button>
+                    </div>
+                    <div class="priority">
+                        <button class="prio">p tag</button>
+                    </div>
+                    <div class="textInput">
+                        <input type="text" placeholder="add task">
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
 </body>
 </html>

@@ -69,4 +69,38 @@ body {
 
 .mainContent {
     background-color: #a5f3fc;
+    padding: 1rem;
+}
+
+.nxt7days {
+    display: flex;
+    gap: 1rem;
+}
+
+.nxt7days > div {
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.nxt7days > div > .header {
+    gap: 1rem;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.nxt7days > div > .inpOptions {
+    justify-content: space-around;
+    display: flex;
+}
+
+.nxt7days input {
+    width: 100%;
+    border-radius: 10px;
+    height: 2rem;
+    padding: 0 5px 0 5px;
+    margin: 0;
 }
