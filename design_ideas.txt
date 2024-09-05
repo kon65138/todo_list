@@ -1,2 +1,18 @@
 roughly following "things" simple design 
 
+ default page is all task page
+ will have an example project with a couple example tasks
+
+ side bar will be 
+
+ Guest
+
+ all tasks
+ today
+ next 7 days
+
+projects  +
+
+example
+
+
