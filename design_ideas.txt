@@ -15,4 +15,10 @@ projects  +
 
 example
 
+todo task class
+    name property
+    dueDate property
+    description property
+    priority property
+
 
