@@ -13,6 +13,6 @@ export function render (domElements) {
             const parent = document.querySelector(domElements[i].parent);
             parent.appendChild(domElements[i].actualElement);
         } else page.appendChild(domElements[i].actualElement);
-        // attaches elements to dom
+        // attaches actualElements to dom
     };
 };
