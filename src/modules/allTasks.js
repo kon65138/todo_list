@@ -11,13 +11,13 @@ export function loadAllTasks () {
 
     render(domElements);
 
-    const test = new todo ("Miles", "is not cool", "11/12/2005", "high", false);
+    const test = new todo ("Miles", "is not cool", "11/12/2005", "red", false);
     test.renderTodo();
 
-    const test1 = new todo ("luke", "test description to see how it copes with long stuff lmao lets gooo vaveiavhaeovaovahvoivhoaivheovihvghagoig", "11/09/2001", "medium", true);
+    const test1 = new todo ("luke", "test description to see how it copes with long stuff lmao lets gooo vaveiavhaeovaovahvoivhoaivheovihvghagoig", "11/09/2001", "yellow", true);
     test1.renderTodo();
 
-    const test2 = new todo ("test3", "test description is noraml length ig", "date", "low", false);
+    const test2 = new todo ("test3", "test description is noraml length ig", "date", "green", false);
     test2.renderTodo()
 
 

@@ -101,7 +101,7 @@ body {
 .task {
     display: flex;
     border-bottom: 1px solid #bc6c25;
-    height: fit-content;
+    height: auto;
     width: 50%;
     align-items: center;
     justify-content: center;
@@ -110,6 +110,7 @@ body {
 }
 
 .taskMiddle {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -129,4 +130,10 @@ body {
 .DltEdt {
     display: flex;
     flex-direction: column;
+}
+
+.priority {
+
+    min-width: 10px;
+    height: 100%;
 }

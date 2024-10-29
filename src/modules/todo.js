@@ -19,13 +19,13 @@ export class todo {
             {element: 'div', class: 'taskTitle', textContent: `${this.name}`, parent: `#${this.name} .taskMiddle`},
             {element: 'div', class: 'taskDescription', textContent: `${this.description}`, parent: `#${this.name} .taskMiddle`},
             {element: 'div', class: 'taskRight', parent: `#${this.name}`},
-            {element: 'div', class: 'taskPriority', textContent: `${this.priority}`, parent: `#${this.name} .taskRight`},
             {element: 'div', class: 'taskDate', textContent: `${this.dueDate}`, parent: `#${this.name} .taskRight`},
             {element: 'div', class: 'DltEdt', parent: `#${this.name}`},
             {element: 'button', class: 'taskEdit', parent: `#${this.name} .DltEdt`},
             {element: 'img', id: 'editIcon', parent: `#${this.name} .taskEdit`},
             {element: 'button', class: 'taskDelete', parent: `#${this.name} .DltEdt`},
             {element: 'img', id: 'deleteIcon', parent: `#${this.name} .taskDelete`},
+            {element: 'div', class: 'priority', bgColor: `${this.priority}`, parent: `#${this.name}`}
         ];
 
         render(domElements);
