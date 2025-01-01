@@ -19,7 +19,7 @@ export function render (domElements) {
         } else page.appendChild(domElements[i].actualElement);
         // attaches actualElements to dom
         if (domElements[i].bgColor) {
-            const prioEl = document.querySelector(`#${domElements[i].id} .priority`)
+            const prioEl = document.querySelector(`${domElements[i].parent} .priority`)
             prioEl.style = `background-color: ${domElements[i].bgColor}`;
         }
     };
