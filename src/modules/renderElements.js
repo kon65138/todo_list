@@ -18,6 +18,10 @@ export function render (domElements) {
             parent.appendChild(domElements[i].actualElement);
         } else page.appendChild(domElements[i].actualElement);
         // attaches actualElements to dom
+        if (domElements[i].src) {
+            domElements[i].actualElement.setAttribute("src", domElements[i].src)
+            domElements[i].actualElement.setAttribute("width", domElements[i].width)
+        };
         if (domElements[i].bgColor) {
             const prioEl = document.querySelector(`${domElements[i].parent} .priority`)
             prioEl.style = `background-color: ${domElements[i].bgColor}`;

@@ -1,5 +1,7 @@
 
 import { render } from "./renderElements.js";
+import dltIcon from "../imgs/delete.svg";
+import edtIcon from "../imgs/pencil.svg";
 
 export class todo {
     constructor(name, description, dueDate, priority, checked) {
@@ -22,9 +24,9 @@ export class todo {
             {element: 'div', class: 'taskDate', textContent: `${this.dueDate}`, parent: `#${this.name} .taskRight`},
             {element: 'div', class: 'DltEdt', parent: `#${this.name}`},
             {element: 'button', class: 'taskEdit', parent: `#${this.name} .DltEdt`},
-            {element: 'img', id: 'editIcon', parent: `#${this.name} .taskEdit`},
+            {element: 'img', id: 'editIcon', src: edtIcon, width: '20px', parent: `#${this.name} .taskEdit`},
             {element: 'button', class: 'taskDelete', parent: `#${this.name} .DltEdt`},
-            {element: 'img', id: 'deleteIcon', parent: `#${this.name} .taskDelete`},
+            {element: 'img', id: 'deleteIcon', src: dltIcon, width: '20px', parent: `#${this.name} .taskDelete`},
             {element: 'div', class: 'priority', bgColor: `${this.priority}`, parent: `#${this.name}`}
         ];
 
