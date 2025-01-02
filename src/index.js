@@ -1,7 +1,7 @@
 import './style.css';
-import { loadAllTasks } from './modules/allTasks.js';
+import { loadDefaultTasks } from './modules/default.js';
 
-loadAllTasks()
+loadDefaultTasks()
 
 
 
