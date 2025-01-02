@@ -1,5 +1,6 @@
 import { render } from './renderElements.js';
 import { todo } from './todo.js';
+import addTodoIcon from '../imgs/pencil-plus.svg';
 
 export function loadAllTasks () {   
 
@@ -7,6 +8,8 @@ export function loadAllTasks () {
     const domElements = [
         {element: 'h1', class: 'title', textContent: "All tasks"},
         {element: 'div', class: 'tasksContainer'},
+        {element: 'button', id: 'addTodo_button'},
+        {element: 'img', src: addTodoIcon, id: 'addTodoIcon', parent: '#addTodo_button'}
     ];
 
     render(domElements);
@@ -18,7 +21,8 @@ export function loadAllTasks () {
     test1.renderTodo();
 
     const test2 = new todo ("test3", "test description is noraml length ig", "date", "green", false);
-    test2.renderTodo()
+    test2.renderTodo();
+
 
 
 

@@ -83,6 +83,7 @@ body {
     flex-direction: column;
     align-items: center;
     box-shadow: 4px 3px 5px 1px rgba(66, 66, 66, 0.459);
+    overflow:HIDDEN;
 }
 
 .title {
@@ -94,7 +95,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: auto;
-    width: 100%;
+    width: 70%;
     align-items: center;
 }
 
@@ -102,7 +103,7 @@ body {
     display: flex;
     border-bottom: 1px solid #bc6c25;
     height: auto;
-    width: 50%;
+    width: 100%;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -136,4 +137,14 @@ body {
 
     min-width: 10px;
     height: 100%;
+}
+
+#addTodo_button {
+    align-self: flex-end;
+    outline: 2px black solid;
+    border-radius: 10px;
+}
+
+#addTodoIcon {
+    width: 5rem;
 }
