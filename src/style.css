@@ -19,6 +19,20 @@ body {
     margin: 0;
 }
 
+.todoPopup {
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+}
+
+.todoPopup form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .sidebar {
     background-color: #dda15e;
     display: flex;
