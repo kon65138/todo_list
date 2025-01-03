@@ -12,8 +12,6 @@ const domElements = [
 
 render(domElements);
 
-const createTodoButton = document.querySelector("#addTodo_button");
-createTodoButton.addEventListener("click", () => createTodoButton.style = "background: blue");
 
 const default_library = [
     new todo ("miles", "library test", "11/04/2023", "blue", true),

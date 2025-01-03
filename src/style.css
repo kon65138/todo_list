@@ -20,6 +20,7 @@ body {
 }
 
 .todoPopup {
+    display: none;
     position: fixed;
     top: 50%; 
     left: 50%;
@@ -31,6 +32,21 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.popupBtns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popupBtns button {
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #dda15e;
+    padding: 0.3rem
 }
 
 .sidebar {
