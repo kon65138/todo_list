@@ -4,8 +4,8 @@ import { loadDefaultTasks } from './modules/default.js';
 loadDefaultTasks()
 
 
-const createTodoButton = document.querySelector("#addTodo_button");
-createTodoButton.addEventListener("click", () => {
+const openPopup = document.querySelector("#addTodo_button");
+openPopup.addEventListener("click", () => {
     const title = document.querySelector('.page > .title');
     const projectDropdown = document.querySelector("#tproject");
 
