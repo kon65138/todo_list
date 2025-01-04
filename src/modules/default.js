@@ -37,7 +37,7 @@ submitPopup.addEventListener("click", () => {
 
 
     default_library[default_library.length] = new todo (title.value, description.value, date.value, prio.value, false, `default_library_${default_library.length}`);
-
+    document.querySelector('.tasksContainer').innerHTML = "";
     loadDefaultTasks();
 
     
