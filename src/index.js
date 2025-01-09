@@ -19,14 +19,18 @@ openPopup.addEventListener("click", () => {
 
     const Ttitle = document.getElementById("ttitle")
     const description = document.getElementById("tdescription")
-    const date = document.getElementById("tdueDate")
+    const todoDate = document.getElementById("tdueDate")
     const prio = document.getElementById("tpriority")
     const project = document.getElementById("tproject")
     
     Ttitle.value = '';
     description.value = '';
-    date.value = '';
+    todoDate.value = '';
     prio.value = 'yellow';
+
+    let currentDate = new Date().toJSON().slice(0, 10);
+
+    todoDate.setAttribute('min', currentDate);
 
     document.querySelector('.todoPopup').style = "display: flex;"
 

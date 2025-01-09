@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="todoPopup">
-        <form id="editTodo" action="/" method="/" >
+        <form id="editTodo" action="/" method="/" onsubmit="event.preventDefault()" >
             <h2>new/edit todo form</h2>
             <div class="inptWrapr">
                 <label for="title">Title:</label>
@@ -21,7 +21,7 @@
             </div>
             <div class="inptWrapr">
                 <label for="dueDate">Due Date:</label>
-                <input type="date" id="tdueDate" name="dueDate" min="today" required>
+                <input type="date" id="tdueDate" name="dueDate" min="" max="2100-01-01" onkeydown="event.preventDefault()" required>
                 <span></span>
             </div>
             <div class="inptWrapr">
@@ -39,7 +39,7 @@
                 </select>
             </div>
             <div class="popupBtns">
-                <button id="newt" type="button">Add</button>
+                <button id="newt" type="submit">Add</button>
                 <button id="cancelt" type="button" class="closeForm">Close</button>
             </div>
         </form>
