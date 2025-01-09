@@ -28,13 +28,14 @@ export function loadDefaultTasks () {
 };
 
 const submitPopup = document.querySelector('#newt');
+
 submitPopup.addEventListener("click", () => {
     const title = document.getElementById("ttitle")
     const description = document.getElementById("tdescription")
     const date = document.getElementById("tdueDate")
     const prio = document.getElementById("tpriority")
     const project = document.getElementById("tproject")
-
+    
 
     default_library[default_library.length] = new todo (title.value, description.value, date.value, prio.value, false, `default_library_${default_library.length}`);
     document.querySelector('.tasksContainer').innerHTML = "";

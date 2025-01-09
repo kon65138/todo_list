@@ -17,6 +17,17 @@ openPopup.addEventListener("click", () => {
 
     projectDropdown.appendChild(p);
 
+    const Ttitle = document.getElementById("ttitle")
+    const description = document.getElementById("tdescription")
+    const date = document.getElementById("tdueDate")
+    const prio = document.getElementById("tpriority")
+    const project = document.getElementById("tproject")
+    
+    Ttitle.value = '';
+    description.value = '';
+    date.value = '';
+    prio.value = 'yellow';
+
     document.querySelector('.todoPopup').style = "display: flex;"
 
 });
