@@ -20,22 +20,42 @@ body {
 }
 
 .todoPopup {
+    width: 50%;
+    height: fit-content;
     display: none;
     position: fixed;
     top: 50%; 
     left: 50%;
-    background-color: white;
     transform: translate(-50%, -50%);
 }
 
+
 .todoPopup form {
+    font-size: 1rem;
     display: flex;
+    flex: auto;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
     padding: 1rem;
     border-radius: 10px;
     border: 2px solid black;
+    background-color: white;
 }
+
+.inptWrapr {
+    display: flex;
+    flex-direction: row;
+}
+
+.inptWrapr label {
+    margin-right: 1rem;
+}
+
+.inptWrapr  input , select{
+    width: 100%;
+}
+
+
 
 .popupBtns {
     display: flex;
