@@ -93,4 +93,15 @@ openPopup.addEventListener("click", () => {
 const closePopup = document.querySelector('#cancelt');
 closePopup.addEventListener("click", () => document.querySelector('.todoPopup').style = "display: none;")
 
+export function renderProj (proj) {
+    const pageTitle = document.querySelector(".title");
+    const taskCont = document.querySelector(".tasksContainer");
 
+    pageTitle.textContent = proj.name;
+    taskCont.innerHTML = '';
+    for (let task of proj.todo_library) {
+        task.renderTodo()
+    }
+
+
+};

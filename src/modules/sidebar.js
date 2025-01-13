@@ -1,4 +1,5 @@
 import { projects } from './default.js';
+import { renderProj } from './default.js';
 
 export function loadSidebarProjects () {
     const sideProjHtml = document.querySelector(".projects");
@@ -11,7 +12,7 @@ export function loadSidebarProjects () {
         e.classList.add(projects[i].name, 'sBtn');
 
         e.addEventListener("click", (e) => {
-            
+            renderProj(projects[i]);
         })
 
 
