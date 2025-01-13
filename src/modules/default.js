@@ -52,7 +52,7 @@ submitPopup.addEventListener("click", (e) => {
     
     
 
-    projects[0].todo_library[projects[0].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, `${projects[0].name}_${projects[0].todo_library.length}`);
+    projects[project.value].todo_library[projects[project.value].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, `${projects[project.value].name}_${projects[project.value].todo_library.length}`);
     document.querySelector('.tasksContainer').innerHTML = "";
     loadDefaultTasks();
 
@@ -78,7 +78,7 @@ openPopup.addEventListener("click", () => {
     for (let i = 0; i < projects.length; i++) {
         let p = document.createElement('option');
         p.textContent = projects[i].name;
-        p.setAttribute('value', projects[i].name);
+        p.setAttribute('value', projects[i].project_no);
         project.appendChild(p);
     }
 
@@ -102,6 +102,4 @@ export function renderProj (proj) {
     for (let task of proj.todo_library) {
         task.renderTodo()
     }
-
-
 };
