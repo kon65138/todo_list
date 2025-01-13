@@ -1,0 +1,5 @@
+from 9/01/2025
+
+FOCUS ON GETTING EVERYTHING WORKING AND INTEGRATED WITH THE PROJECTS ARRAY
+
+last focus was in default.js working on getting projects dropdown on the todo popup to read from projects array
