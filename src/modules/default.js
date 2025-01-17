@@ -54,7 +54,7 @@ submitPopup.addEventListener("click", (e) => {
 
     projects[project.value].todo_library[projects[project.value].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, `${projects[project.value].name}_${projects[project.value].todo_library.length}`);
     document.querySelector('.tasksContainer').innerHTML = "";
-    loadDefaultTasks();
+    renderProj(projects[project.value]);
 
     
 });
