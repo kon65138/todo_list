@@ -19,6 +19,22 @@ body {
     margin: 0;
 }
 
+.projectsPopup {
+    width: fit-content;
+    height: fit-content;
+    display: none;
+    position: fixed;
+    top: 20%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.projPopupBtns {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .todoPopup {
     width: 50%;
     height: fit-content;
@@ -30,7 +46,7 @@ body {
 }
 
 
-.todoPopup form {
+#editTodo , #addProject {
     font-size: 1rem;
     display: flex;
     flex: auto;
@@ -42,6 +58,12 @@ body {
     background-color: white;
 }
 
+#projName {
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+
 .inptWrapr {
     display: flex;
     flex-direction: row;
@@ -51,12 +73,11 @@ body {
     margin-right: 1rem;
 }
 
-.inptWrapr  input , select{
+.inptWrapr  input , select {
     width: 100%;
     border: 1px solid black;
     border-radius: 3px;
 }
-
 
 
 .popupBtns {
@@ -64,7 +85,7 @@ body {
     justify-content: space-between;
 }
 
-.popupBtns button {
+.popupBtns button , #newProj , #cancelProj {
     border-radius: 5px;
     border: 1px solid black;
     background-color: #dda15e;

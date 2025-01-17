@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="projectsPopup">
+        <form id="addProject" action="/" method="/" onsubmit="event.preventDefault()">
+            <div class="projNameWrapr">
+                <label for="projName">Project Name:</label>
+                <input type="text" id="projName" name="projName" required>
+            </div>
+            <div class="projPopupBtns">
+                <button id="newProj">add</button>
+                <button id="cancelProj">close</button>
+            </div>
+        </form>
+    </div>
     <div class="todoPopup">
         <form id="editTodo" action="/" method="/" onsubmit="event.preventDefault()" >
             <h2>new/edit todo form</h2>

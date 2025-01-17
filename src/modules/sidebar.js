@@ -20,3 +20,16 @@ export function loadSidebarProjects () {
     }
 };
 
+const openProjectPopup = document.querySelector(".newProject");
+const closeProjPopup = document.getElementById('cancelProj');
+const projectPopup = document.querySelector(".projectsPopup");
+
+openProjectPopup.addEventListener("click", () => {
+
+
+    projectPopup.style = "display:flex;";
+})
+
+closeProjPopup.addEventListener("click", () => {
+    projectPopup.style = "display:none;";
+})
