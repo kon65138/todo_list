@@ -103,3 +103,7 @@ export function renderProj (proj) {
         task.renderTodo()
     }
 };
+
+export function addProjToArray() {
+    
+}

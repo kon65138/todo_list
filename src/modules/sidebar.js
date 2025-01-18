@@ -1,8 +1,11 @@
 import { projects } from './default.js';
 import { renderProj } from './default.js';
+import { project } from './project.js';
 
 export function loadSidebarProjects () {
     const sideProjHtml = document.querySelector(".projects");
+
+    sideProjHtml.innerHTML = '';
 
     for (let i = 0; i < projects.length; i++) {
         let e = document.createElement('button');
@@ -20,16 +23,22 @@ export function loadSidebarProjects () {
     }
 };
 
-const openProjectPopup = document.querySelector(".newProject");
+const openProjectPopupBtn = document.querySelector(".newProject");
 const closeProjPopup = document.getElementById('cancelProj');
 const projectPopup = document.querySelector(".projectsPopup");
+const projNameInpt = document.querySelector("#projName");
+const newProjBtn = document.querySelector("#newProj");
 
-openProjectPopup.addEventListener("click", () => {
-
-
+openProjectPopupBtn.addEventListener("click", () => {
+    projNameInpt.value = '';
     projectPopup.style = "display:flex;";
 })
 
 closeProjPopup.addEventListener("click", () => {
     projectPopup.style = "display:none;";
+})
+
+newProjBtn.addEventListener("click", () => {
+    projects[projects.length] = new project (projNameInpt.value, projects.length);
+    loadSidebarProjects();
 })
