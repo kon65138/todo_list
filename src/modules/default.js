@@ -16,17 +16,9 @@ render(domElements);
 export const projects = [
     {
     name: 'default',
-    todo_library: [new todo ("miles", "library test", "11/04/2023", "blue", true, "default_library_0"),
-        new todo ("luke", "test description to see how it copes with long stuff lmao lets gooo vaveiavhaeovaovahvoivhoaivheovihvghagoig", "11/09/2001", "yellow", true, "default_library_1"),
+    todo_library: [new todo ("example title", "example description", "11/04/2023", "yellow", true, "default_library_0"),
     ],
     project_no: 0,
-    },
-    {
-    name: 'mum',
-    todo_library: [new todo ("2nd proj test", "", "11/04/2023", "blue", true, "default_library_0"),
-        new todo ("luke", "test description to see how it copes with long stuff lmao lets gooo vaveiavhaeovaovahvoivhoaivheovihvghagoig", "11/09/2001", "yellow", true, "default_library_1"),
-    ],
-    project_no: 1,
     },
 ];
 
@@ -105,5 +97,5 @@ export function renderProj (proj) {
 };
 
 export function addProjToArray() {
-    
+
 }
