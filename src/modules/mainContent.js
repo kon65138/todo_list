@@ -14,27 +14,13 @@ const domElements = [
 render(domElements);
 
 export const projects = [
-    {
-    name: 'default',
-    todo_library: [new todo ("example title", "example description", "11/04/2023", "yellow", true, "default_library_0"),
-    ],
-    project_no: 0,
-    },
+
 ];
 
 
-export function loadDefaultTasks () {   
-
-    
-    for (let task of projects[0].todo_library) {
-        task.renderTodo()
-    }
-
-};
-
 const submitPopup = document.querySelector('#newt');
 
-submitPopup.addEventListener("click", (e) => {
+submitPopup.addEventListener("click", () => {
     const title = document.getElementById("ttitle")
     const description = document.getElementById("tdescription")
     const todoDate = document.getElementById("tdueDate")
@@ -44,12 +30,12 @@ submitPopup.addEventListener("click", (e) => {
     
     
 
-    projects[project.value].todo_library[projects[project.value].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, `${projects[project.value].name}_${projects[project.value].todo_library.length}`);
-    document.querySelector('.tasksContainer').innerHTML = "";
+    projects[project.value].todo_library[projects[project.value].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, project.value);
     renderProj(projects[project.value]);
 
-    
+
 });
+
 
 const openPopup = document.querySelector("#addTodo_button");
 
@@ -91,11 +77,21 @@ export function renderProj (proj) {
 
     pageTitle.textContent = proj.name;
     taskCont.innerHTML = '';
-    for (let task of proj.todo_library) {
-        task.renderTodo()
+    for (let i = 0; i < proj.todo_library.length; i++) {
+        proj.todo_library[i].renderTodo(i);
+
+        let delT = document.querySelector(`#_${proj.project_no}_${i} .taskDelete`);
+
+        delT.addEventListener('click', () => {
+            projects[proj.project_no].todo_library[i].delete(i);
+        })
     }
+
+
 };
 
-export function addProjToArray() {
 
-}
+
+
+
+
