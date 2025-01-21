@@ -2,6 +2,7 @@ import { projects } from './mainContent.js';
 import { renderProj } from './mainContent.js';
 import { project } from './project.js';
 
+
 export function loadSidebarProjects () {
     const sideProjHtml = document.querySelector(".projects");
 

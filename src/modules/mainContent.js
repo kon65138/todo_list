@@ -3,7 +3,6 @@ import { todo } from './todo.js';
 import addTodoIcon from '../imgs/pencil-plus.svg';
 import { de } from 'date-fns/locale';
 
-
 const domElements = [
     {element: 'h1', class: 'title', textContent: "default"},
     {element: 'div', class: 'tasksContainer'},
@@ -11,6 +10,10 @@ const domElements = [
     {element: 'img', src: addTodoIcon, id: 'addTodoIcon', parent: '#addTodo_button'}
 ];
 
+let edit = '';
+let ih = 0;
+let pro = '';
+let cproj = 0;
 render(domElements);
 
 export const projects = [
@@ -20,20 +23,45 @@ export const projects = [
 
 const submitPopup = document.querySelector('#newt');
 
-submitPopup.addEventListener("click", () => {
-    const title = document.getElementById("ttitle")
-    const description = document.getElementById("tdescription")
-    const todoDate = document.getElementById("tdueDate")
-    const prio = document.getElementById("tpriority")
-    const project = document.getElementById("tproject")
+submitPopup.addEventListener("click", (e) => {
+    if (edit == true) {
+        const ttitle = document.getElementById("ttitle")
+        const tdescription = document.getElementById("tdescription")
+        const todoDate = document.getElementById("tdueDate")
+        const prio = document.getElementById("tpriority")
+        const project = document.getElementById("tproject")
+
+        projects[pro.project_no].todo_library[ih].name = ttitle.value;
+        projects[pro.project_no].todo_library[ih].description = tdescription.value;
+        projects[pro.project_no].todo_library[ih].dueDate = todoDate.value;
+        projects[pro.project_no].todo_library[ih].priority = prio.value;
+        projects[pro.project_no].todo_library[ih].id = project.value;
+
+        if (pro.project_no != project.value) {
+            let tempPro = projects[pro.project_no].todo_library[ih];
+            projects[pro.project_no].todo_library.splice(ih, 1);
+            projects[project.value].todo_library[projects[project.value].todo_library.length] = tempPro;
+            console.log(pro.todo_library);
+            console.log(projects[project.value].todo_library);
+        }
+        pro = '';
+        edit = false;
+        ih = 0;
+        renderProj(projects[project.value]);
+    } else {
+        const title = document.getElementById("ttitle")
+        const description = document.getElementById("tdescription")
+        const todoDate = document.getElementById("tdueDate")
+        const prio = document.getElementById("tpriority")
+        const project = document.getElementById("tproject")
 
     
     
 
-    projects[project.value].todo_library[projects[project.value].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, project.value);
-    renderProj(projects[project.value]);
-
-
+        projects[project.value].todo_library[projects[project.value].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, project.value);
+        renderProj(projects[project.value]);
+    };
+    document.querySelector('.todoPopup').style = "display: none;";
 });
 
 
@@ -60,6 +88,8 @@ openPopup.addEventListener("click", () => {
         project.appendChild(p);
     }
 
+    project.value = cproj;
+
     let currentDate = new Date().toJSON().slice(0, 10);
 
     todoDate.setAttribute('min', currentDate);
@@ -74,6 +104,7 @@ closePopup.addEventListener("click", () => document.querySelector('.todoPopup').
 export function renderProj (proj) {
     const pageTitle = document.querySelector(".title");
     const taskCont = document.querySelector(".tasksContainer");
+    cproj = proj.project_no;
 
     pageTitle.textContent = proj.name;
     taskCont.innerHTML = '';
@@ -89,14 +120,17 @@ export function renderProj (proj) {
         })
 
         editT.addEventListener('click', () => {
+            pro = proj
+            edit = true;
+            ih = i;
             const Ttitle = document.getElementById("ttitle")
-            const description = document.getElementById("tdescription")
+            const tdescription = document.getElementById("tdescription")
             const todoDate = document.getElementById("tdueDate")
             const prio = document.getElementById("tpriority")
             const project = document.getElementById("tproject")
     
             Ttitle.value = proj.todo_library[i].name;
-            description.value = proj.todo_library[i].description;
+            tdescription.value = proj.todo_library[i].description;
             todoDate.value = proj.todo_library[i].dueDate;
             prio.value = proj.todo_library[i].priority;
             project.innerHTML = '';
