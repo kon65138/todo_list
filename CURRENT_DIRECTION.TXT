@@ -11,9 +11,10 @@ FOCUS ON MAKING ADD PROJECTS SIDEBAR BUTTON OPEN A POPUP TO MAKE ANOTHER PROJECT
 
 18 january 2025:
 what features are left till full functionality?
--delete and edit button functionality on todos
+-delete and edit button functionality on todos (done delete button?)
 -delete button with functionality on projects
 -proper validation when putting in info for project and todo forms
 -tick/ proper complete todo functionality (greyed out and moved to bottom of list once completed?)
 -proper sorting on todos
+-add local storage
 -website astetics touch ups

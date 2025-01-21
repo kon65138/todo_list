@@ -80,10 +80,41 @@ export function renderProj (proj) {
     for (let i = 0; i < proj.todo_library.length; i++) {
         proj.todo_library[i].renderTodo(i);
 
+        let editT = document.querySelector(`#_${proj.project_no}_${i} .taskEdit`);
+
         let delT = document.querySelector(`#_${proj.project_no}_${i} .taskDelete`);
 
         delT.addEventListener('click', () => {
             projects[proj.project_no].todo_library[i].delete(i);
+        })
+
+        editT.addEventListener('click', () => {
+            const Ttitle = document.getElementById("ttitle")
+            const description = document.getElementById("tdescription")
+            const todoDate = document.getElementById("tdueDate")
+            const prio = document.getElementById("tpriority")
+            const project = document.getElementById("tproject")
+    
+            Ttitle.value = proj.todo_library[i].name;
+            description.value = proj.todo_library[i].description;
+            todoDate.value = proj.todo_library[i].dueDate;
+            prio.value = proj.todo_library[i].priority;
+            project.innerHTML = '';
+
+            for (let i = 0; i < projects.length; i++) {
+                let p = document.createElement('option');
+                p.textContent = projects[i].name;
+                p.setAttribute('value', projects[i].project_no);
+                project.appendChild(p);
+            }
+
+            project.value = proj.todo_library[i].id;
+
+            let currentDate = new Date().toJSON().slice(0, 10);
+
+            todoDate.setAttribute('min', currentDate);
+
+            document.querySelector('.todoPopup').style = "display: flex;"
         })
     }
 
