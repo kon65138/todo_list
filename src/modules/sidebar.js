@@ -10,21 +10,39 @@ export function loadSidebarProjects () {
     sideProjHtml.innerHTML = '';
 
     for (let i = 0; i < projects.length; i++) {
+        let hoverDelete = false;
         let e = document.createElement('button');
         let t = document.createElement('div');
-        let d = document.createElement('div');
-        let img = document.createElement('img');
-        img.setAttribute('src', dltIcon);
-        d.appendChild(img);
-        d.classList = "deleteProjDiv";
+
         t.textContent = projects[i].name;
         e.appendChild(t);
-        e.appendChild(d);
         e.classList.add(projects[i].name, 'sBtn');
 
+        if (i > 0) {
+            let d = document.createElement('div');
+            let img = document.createElement('img');
+            img.setAttribute('src', dltIcon);
+            d.appendChild(img);
+            d.classList = "deleteProjDiv";
+            e.appendChild(d);
+            img.addEventListener("click", () => {
+                hoverDelete = true;
+                console.log(projects);
+                projects.splice(i, 1);
+                console.log(projects);
+                renderProj(projects[0]);
+                loadSidebarProjects()
+            })
+        }
+
         e.addEventListener("click", (e) => {
-            renderProj(projects[i]);
+            if (hoverDelete == true) {
+                return
+            } else {
+                renderProj(projects[i]);
+            }
         })
+
 
 
         sideProjHtml.appendChild(e);
