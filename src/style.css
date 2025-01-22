@@ -104,9 +104,11 @@ body {
 }
 
 .sidebar > .label {
+    align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 3rem 1rem 1rem 1rem;
+    margin: 3rem 0rem 1rem 0rem;
+    padding: 0rem 1.5rem 0rem 2rem;
     display: flex;
     justify-content: space-between;
 }
@@ -115,7 +117,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 1rem;
     font-size: 1.5rem;
     width: 1.5rem;
     height: 1.5rem;
@@ -127,9 +128,23 @@ body {
 }
 
 .sBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 3rem;
     font-size: 1rem;
-    padding-left: 2rem;
+    padding: 0rem 2rem 0rem 2rem;
+
+}
+
+.sBtn img {
+    width: 1rem;
+}
+
+.sBtn img:hover {
+    position: relative;
+    left: 0.5rem;
+    width: 2rem;
 }
 
 .sBtn:hover {

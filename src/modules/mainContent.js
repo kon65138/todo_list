@@ -48,6 +48,7 @@ submitPopup.addEventListener("click", (e) => {
         edit = false;
         ih = 0;
         renderProj(projects[project.value]);
+        document.querySelector('.todoPopup').style = "display: none;";
     } else {
         const title = document.getElementById("ttitle")
         const description = document.getElementById("tdescription")
@@ -61,7 +62,6 @@ submitPopup.addEventListener("click", (e) => {
         projects[project.value].todo_library[projects[project.value].todo_library.length] = new todo (title.value, description.value, todoDate.value, prio.value, false, project.value);
         renderProj(projects[project.value]);
     };
-    document.querySelector('.todoPopup').style = "display: none;";
 });
 
 
