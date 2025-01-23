@@ -31,6 +31,13 @@ submitPopup.addEventListener("click", (e) => {
         const prio = document.getElementById("tpriority")
         const project = document.getElementById("tproject")
 
+        if (ttitle.value === '' || ttitle.value === null) {
+            return
+        } else if (todoDate.value === '' || todoDate.value === null) {
+            return
+        };
+
+
         projects[pro.project_no].todo_library[ih].name = ttitle.value;
         projects[pro.project_no].todo_library[ih].description = tdescription.value;
         projects[pro.project_no].todo_library[ih].dueDate = todoDate.value;
@@ -41,8 +48,6 @@ submitPopup.addEventListener("click", (e) => {
             let tempPro = projects[pro.project_no].todo_library[ih];
             projects[pro.project_no].todo_library.splice(ih, 1);
             projects[project.value].todo_library[projects[project.value].todo_library.length] = tempPro;
-            console.log(pro.todo_library);
-            console.log(projects[project.value].todo_library);
         }
         pro = '';
         edit = false;
@@ -55,6 +60,12 @@ submitPopup.addEventListener("click", (e) => {
         const todoDate = document.getElementById("tdueDate")
         const prio = document.getElementById("tpriority")
         const project = document.getElementById("tproject")
+
+        if (title.value === '' || title.value === null) {
+            return
+        } else if (todoDate.value === '' || todoDate.value === null) {
+            return
+        };
 
     
     

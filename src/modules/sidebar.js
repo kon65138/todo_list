@@ -3,6 +3,10 @@ import { renderProj } from './mainContent.js';
 import { project } from './project.js';
 import dltIcon from "../imgs/delete.svg";
 
+function hasWhiteSpace(s) {
+    return /\s/g.test(s);
+};
+
 
 export function loadSidebarProjects () {
     const sideProjHtml = document.querySelector(".projects");
@@ -16,7 +20,7 @@ export function loadSidebarProjects () {
 
         t.textContent = projects[i].name;
         e.appendChild(t);
-        e.classList.add(projects[i].name, 'sBtn');
+        e.classList.add(projects[i].name.replace(/\s/g, '_'), 'sBtn');
 
         if (i > 0) {
             let d = document.createElement('div');
@@ -27,9 +31,7 @@ export function loadSidebarProjects () {
             e.appendChild(d);
             img.addEventListener("click", () => {
                 hoverDelete = true;
-                console.log(projects);
                 projects.splice(i, 1);
-                console.log(projects);
                 renderProj(projects[0]);
                 loadSidebarProjects()
             })
@@ -65,6 +67,11 @@ closeProjPopup.addEventListener("click", () => {
 })
 
 newProjBtn.addEventListener("click", () => {
+    if (projNameInpt.value === '' || projNameInpt.value === null) {
+        return
+    } else if (hasWhiteSpace(projNameInpt.value) === true) {
+
+    }
     projects[projects.length] = new project (projNameInpt.value, projects.length);
     loadSidebarProjects();
 })

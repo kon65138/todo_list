@@ -134,7 +134,8 @@ body {
     height: 3rem;
     font-size: 1rem;
     padding: 0rem 2rem 0rem 2rem;
-
+    margin-left: 1rem;
+    
 }
 
 .sBtn img {
