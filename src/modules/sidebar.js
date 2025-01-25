@@ -82,9 +82,10 @@ newProjBtn.addEventListener("click", () => {
 })
 
 
-let deadlineClicked = 0;
+let deadlineClicked = 1;
 export let deadlineOn = true;
 deadlineBtn.addEventListener("click", () => {
+    deadlineClicked += 1;
     urgencyOn = false;
     deadlineOn = true;
     deadlineSort(cproj);
@@ -94,6 +95,7 @@ deadlineBtn.addEventListener("click", () => {
 let urgencyClicked = 0; 
 export let urgencyOn = false;
 urgencyBtn.addEventListener("click", () => {
+    urgencyClicked += 1;
     urgencyOn = true;
     deadlineOn = false;
     urgencySort(cproj);
@@ -102,7 +104,6 @@ urgencyBtn.addEventListener("click", () => {
 
 
 export function deadlineSort (projectNumber) {
-    deadlineClicked += 1;
     if ((deadlineClicked & 1) === 1) {
         projects[projectNumber].todo_library.sort(function (a, b) {
             return compareAsc(a.dueDate, b.dueDate);
@@ -115,7 +116,6 @@ export function deadlineSort (projectNumber) {
 };
 
 export function urgencySort (projectNumber) {
-    urgencyClicked += 1;
     if ((urgencyClicked & 1) === 1) {
         projects[projectNumber].todo_library.sort(function (a, b) {
             return compareAsc(a.dueDate, b.dueDate);

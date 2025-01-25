@@ -2,6 +2,11 @@ import { render } from './renderElements.js';
 import { todo } from './todo.js';
 import addTodoIcon from '../imgs/pencil-plus.svg';
 import { de } from 'date-fns/locale';
+import { deadlineOn } from './sidebar.js';
+import { deadlineSort } from './sidebar.js';
+import { urgencyOn } from './sidebar.js';
+import { urgencySort } from './sidebar.js';
+
 
 const domElements = [
     {element: 'h1', class: 'title', textContent: "default"},
@@ -114,9 +119,16 @@ const closePopup = document.querySelector('#cancelt');
 closePopup.addEventListener("click", () => document.querySelector('.todoPopup').style = "display: none;")
 
 export function renderProj (proj) {
+
     const pageTitle = document.querySelector(".title");
     const taskCont = document.querySelector(".tasksContainer");
     cproj = proj.project_no;
+
+    if (deadlineOn) {
+        deadlineSort(cproj);
+    } else if (urgencyOn) {
+        urgencySort(cproj);
+    };
 
     pageTitle.textContent = proj.name;
     taskCont.innerHTML = '';
