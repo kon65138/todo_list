@@ -3,6 +3,13 @@ import { renderProj } from './mainContent.js';
 import { project } from './project.js';
 import dltIcon from "../imgs/delete.svg";
 
+const openProjectPopupBtn = document.querySelector(".newProject");
+const closeProjPopup = document.getElementById('cancelProj');
+const projectPopup = document.querySelector(".projectsPopup");
+const projNameInpt = document.querySelector("#projName");
+const newProjBtn = document.querySelector("#newProj");
+
+
 function hasWhiteSpace(s) {
     return /\s/g.test(s);
 };
@@ -51,11 +58,6 @@ export function loadSidebarProjects () {
     }
 };
 
-const openProjectPopupBtn = document.querySelector(".newProject");
-const closeProjPopup = document.getElementById('cancelProj');
-const projectPopup = document.querySelector(".projectsPopup");
-const projNameInpt = document.querySelector("#projName");
-const newProjBtn = document.querySelector("#newProj");
 
 openProjectPopupBtn.addEventListener("click", () => {
     projNameInpt.value = '';
