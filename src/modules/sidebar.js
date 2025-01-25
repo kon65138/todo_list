@@ -83,21 +83,69 @@ newProjBtn.addEventListener("click", () => {
 
 
 let deadlineClicked = 0;
+export let deadlineOn = true;
 deadlineBtn.addEventListener("click", () => {
+    urgencyOn = false;
+    deadlineOn = true;
     deadlineSort(cproj);
     renderProj(projects[cproj]);
 });
 
+let urgencyClicked = 0; 
+export let urgencyOn = false;
+urgencyBtn.addEventListener("click", () => {
+    urgencyOn = true;
+    deadlineOn = false;
+    urgencySort(cproj);
+    renderProj(projects[cproj]);
+})
 
-function deadlineSort (projectNubmer) {
+
+export function deadlineSort (projectNumber) {
     deadlineClicked += 1;
     if ((deadlineClicked & 1) === 1) {
-        projects[projectNubmer].todo_library.sort(function (a, b) {
+        projects[projectNumber].todo_library.sort(function (a, b) {
             return compareAsc(a.dueDate, b.dueDate);
         });
     } else if ((deadlineClicked & 1) === 0) {
-        projects[projectNubmer].todo_library.sort(function (a, b) {
+        projects[projectNumber].todo_library.sort(function (a, b) {
             return compareAsc(b.dueDate, a.dueDate);
         });
     };
+};
+
+export function urgencySort (projectNumber) {
+    urgencyClicked += 1;
+    if ((urgencyClicked & 1) === 1) {
+        projects[projectNumber].todo_library.sort(function (a, b) {
+            return compareAsc(a.dueDate, b.dueDate);
+        });
+        projects[projectNumber].todo_library.sort(function (a, b) {
+            if (a.priority === b.priority) {
+                return 0
+            } else if (a.priority === 'red' && b.priority !== 'red') {
+                return -1
+            } else if (a.priority === 'yellow' && (b.priority !== 'yellow' && b.priority !== 'red')){
+                return -1
+            } else {
+                return 1
+            }
+        });
+    } else if ((urgencyClicked & 1) === 0) {
+        projects[projectNumber].todo_library.sort(function (a, b) {
+            return compareAsc(a.dueDate, b.dueDate);
+        });
+        projects[projectNumber].todo_library.sort(function (a, b) {
+            if (a.priority === b.priority) {
+                return 0
+            } else if (b.priority === 'red' && a.priority !== 'red') {
+                return -1
+            } else if (b.priority === 'yellow' && (a.priority !== 'yellow' && a.priority !== 'red')){
+                return -1
+            } else {
+                return 1
+            };
+        });
+    };
 }
+

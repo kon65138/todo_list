@@ -4,6 +4,7 @@ import { loadSidebarProjects } from './modules/sidebar.js';
 import { project } from './modules/project.js';
 import { projects } from './modules/mainContent.js';
 import { todo } from './modules/todo.js';
+import { lmao } from './modules/sidebar.js';
 
 projects[projects.length] = new project ('default', projects.length);
 let currentDate = new Date().toJSON().slice(0, 10);
@@ -12,6 +13,8 @@ renderProj(projects[0]);
 
 
 loadSidebarProjects();
+
+
 
 
 
