@@ -2,13 +2,16 @@ import { projects } from './mainContent.js';
 import { renderProj } from './mainContent.js';
 import { project } from './project.js';
 import dltIcon from "../imgs/delete.svg";
+import { compareAsc } from "date-fns";
+import { cproj } from './mainContent.js';
 
 const openProjectPopupBtn = document.querySelector(".newProject");
 const closeProjPopup = document.getElementById('cancelProj');
 const projectPopup = document.querySelector(".projectsPopup");
 const projNameInpt = document.querySelector("#projName");
 const newProjBtn = document.querySelector("#newProj");
-
+const deadlineBtn = document.querySelector(".deadline");
+const urgencyBtn = document.querySelector(".urgency");
 
 function hasWhiteSpace(s) {
     return /\s/g.test(s);
@@ -77,3 +80,24 @@ newProjBtn.addEventListener("click", () => {
     projects[projects.length] = new project (projNameInpt.value, projects.length);
     loadSidebarProjects();
 })
+
+
+let deadlineClicked = 0;
+deadlineBtn.addEventListener("click", () => {
+    deadlineSort(cproj);
+    renderProj(projects[cproj]);
+});
+
+
+function deadlineSort (projectNubmer) {
+    deadlineClicked += 1;
+    if ((deadlineClicked & 1) === 1) {
+        projects[projectNubmer].todo_library.sort(function (a, b) {
+            return compareAsc(a.dueDate, b.dueDate);
+        });
+    } else if ((deadlineClicked & 1) === 0) {
+        projects[projectNubmer].todo_library.sort(function (a, b) {
+            return compareAsc(b.dueDate, a.dueDate);
+        });
+    };
+}

@@ -10,10 +10,11 @@ const domElements = [
     {element: 'img', src: addTodoIcon, id: 'addTodoIcon', parent: '#addTodo_button'}
 ];
 
+
 let edit = '';
 let ih = 0;
 let pro = '';
-let cproj = 0;
+export let cproj = 0;
 render(domElements);
 
 export const projects = [
