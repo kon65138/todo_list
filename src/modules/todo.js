@@ -23,7 +23,7 @@ export class todo {
         const domElements = [
             {element: 'div', class: 'task', id: `${todoId}`, parent: '.tasksContainer'},
             {element: 'div', class: 'taskLeft', parent: `#${todoId}`},
-            {element: 'input', type: 'checkbox', parent: `#${todoId} .taskLeft`},
+            {element: 'input', type: 'checkbox', parent: `#${todoId} .taskLeft`, isChecked: this.checked},
             {element: 'div', class: 'taskMiddle', parent: `#${todoId}`},
             {element: 'div', class: 'taskTitle', textContent: `${this.name}`, parent: `#${todoId} .taskMiddle`},
             {element: 'div', class: 'taskDescription', textContent: `${this.description}`, parent: `#${todoId} .taskMiddle`},

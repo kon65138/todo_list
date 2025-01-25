@@ -12,6 +12,12 @@ export function render (domElements) {
         if (domElements[i].textContent) domElements[i].actualElement.textContent = domElements[i].textContent;
         // adds textContnet to actualElement
         if (domElements[i].type) domElements[i].actualElement.setAttribute("type", domElements[i].type);
+        if (domElements[i].isChecked === true) {
+            domElements[i].actualElement.checked = domElements[i].isChecked;
+            domElements[0].actualElement.style = 'opacity: 30%';
+        } else if (domElements[i].isChecked === false) {
+            domElements[i].actualElement.checked = domElements[i].isChecked;
+        }
         // adds type attribute to actualElement
         if (domElements[i].parent) {
             const parent = document.querySelector(domElements[i].parent);

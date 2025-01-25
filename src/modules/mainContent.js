@@ -135,9 +135,21 @@ export function renderProj (proj) {
     for (let i = 0; i < proj.todo_library.length; i++) {
         proj.todo_library[i].renderTodo(i);
 
+        let checkboxT = document.querySelector(`#_${proj.project_no}_${i} .taskLeft > input`)
+
         let editT = document.querySelector(`#_${proj.project_no}_${i} .taskEdit`);
 
         let delT = document.querySelector(`#_${proj.project_no}_${i} .taskDelete`);
+
+        checkboxT.addEventListener("change", () => {
+            if (checkboxT.checked) {
+                proj.todo_library[i].checked = true;
+            renderProj(projects[cproj]);
+            } else {
+                proj.todo_library[i].checked = false;
+            renderProj(projects[cproj]);
+            }
+        });
 
         delT.addEventListener('click', () => {
             projects[proj.project_no].todo_library[i].delete(i);
@@ -175,7 +187,6 @@ export function renderProj (proj) {
             document.querySelector('.todoPopup').style = "display: flex;"
         })
     }
-
 
 };
 

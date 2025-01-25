@@ -100,7 +100,20 @@ urgencyBtn.addEventListener("click", () => {
     deadlineOn = false;
     urgencySort(cproj);
     renderProj(projects[cproj]);
-})
+});
+
+function greyTodo (projectNumber) {
+    projects[projectNumber].todo_library.sort(function(a, b) {
+        if (a.checked === b.checked) {
+            return 0    
+        } else if (a.checked === true) {
+            return 1
+        } else if (a.checked === false && b.checked === true) {
+            return -1
+        }
+    });
+};
+
 
 
 export function deadlineSort (projectNumber) {
@@ -108,10 +121,12 @@ export function deadlineSort (projectNumber) {
         projects[projectNumber].todo_library.sort(function (a, b) {
             return compareAsc(a.dueDate, b.dueDate);
         });
+        greyTodo(projectNumber);
     } else if ((deadlineClicked & 1) === 0) {
         projects[projectNumber].todo_library.sort(function (a, b) {
             return compareAsc(b.dueDate, a.dueDate);
         });
+        greyTodo(projectNumber);
     };
 };
 
@@ -131,6 +146,7 @@ export function urgencySort (projectNumber) {
                 return 1
             }
         });
+        greyTodo(projectNumber);
     } else if ((urgencyClicked & 1) === 0) {
         projects[projectNumber].todo_library.sort(function (a, b) {
             return compareAsc(a.dueDate, b.dueDate);
@@ -146,6 +162,7 @@ export function urgencySort (projectNumber) {
                 return 1
             };
         });
+        greyTodo(projectNumber);
     };
 }
 
