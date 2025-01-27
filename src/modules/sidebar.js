@@ -4,6 +4,7 @@ import { project } from './project.js';
 import dltIcon from "../imgs/delete.svg";
 import { compareAsc } from "date-fns";
 import { cproj } from './mainContent.js';
+import { populateStorage } from '../index.js';
 
 const openProjectPopupBtn = document.querySelector(".newProject");
 const closeProjPopup = document.getElementById('cancelProj');
@@ -80,6 +81,7 @@ newProjBtn.addEventListener("click", () => {
     }
     projects[projects.length] = new project (projNameInpt.value, projects.length);
     loadSidebarProjects();
+    populateStorage();
 })
 
 

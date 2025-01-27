@@ -1,11 +1,11 @@
 import { render } from './renderElements.js';
 import { todo } from './todo.js';
 import addTodoIcon from '../imgs/pencil-plus.svg';
-import { de } from 'date-fns/locale';
 import { deadlineOn } from './sidebar.js';
 import { deadlineSort } from './sidebar.js';
 import { urgencyOn } from './sidebar.js';
 import { urgencySort } from './sidebar.js';
+import { populateStorage } from '../index.js';
 
 
 const domElements = [
@@ -188,6 +188,8 @@ export function renderProj (proj) {
             document.querySelector('.todoPopup').style = "display: flex;"
         })
     }
+
+    populateStorage();
 
 };
 
