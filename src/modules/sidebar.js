@@ -24,6 +24,7 @@ export function loadSidebarProjects () {
     sideProjHtml.innerHTML = '';
 
     for (let i = 0; i < projects.length; i++) {
+        projects[i].project_no = i;
         let hoverDelete = false;
         let e = document.createElement('button');
         let t = document.createElement('div');
@@ -42,8 +43,8 @@ export function loadSidebarProjects () {
             img.addEventListener("click", () => {
                 hoverDelete = true;
                 projects.splice(i, 1);
-                renderProj(projects[0]);
                 loadSidebarProjects()
+                renderProj(projects[0]);
             })
         }
 

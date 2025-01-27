@@ -133,13 +133,14 @@ export function renderProj (proj) {
     pageTitle.textContent = proj.name;
     taskCont.innerHTML = '';
     for (let i = 0; i < proj.todo_library.length; i++) {
+        proj.todo_library[i].id = cproj
         proj.todo_library[i].renderTodo(i);
 
-        let checkboxT = document.querySelector(`#_${proj.project_no}_${i} .taskLeft > input`)
+        let checkboxT = document.querySelector(`#_${cproj}_${i} .taskLeft > input`)
 
-        let editT = document.querySelector(`#_${proj.project_no}_${i} .taskEdit`);
+        let editT = document.querySelector(`#_${cproj}_${i} .taskEdit`);
 
-        let delT = document.querySelector(`#_${proj.project_no}_${i} .taskDelete`);
+        let delT = document.querySelector(`#_${cproj}_${i} .taskDelete`);
 
         checkboxT.addEventListener("change", () => {
             if (checkboxT.checked) {
