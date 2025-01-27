@@ -85,6 +85,7 @@ submitPopup.addEventListener("click", (e) => {
 const openPopup = document.querySelector("#addTodo_button");
 
 openPopup.addEventListener("click", () => {
+    let currentDate = new Date().toJSON().slice(0, 10);
 
     const Ttitle = document.getElementById("ttitle")
     const description = document.getElementById("tdescription")
@@ -94,7 +95,7 @@ openPopup.addEventListener("click", () => {
     
     Ttitle.value = '';
     description.value = '';
-    todoDate.value = '';
+    todoDate.value = currentDate;
     prio.value = 'yellow';
     project.innerHTML = '';
 
@@ -107,12 +108,12 @@ openPopup.addEventListener("click", () => {
 
     project.value = cproj;
 
-    let currentDate = new Date().toJSON().slice(0, 10);
 
     todoDate.setAttribute('min', currentDate);
 
-    document.querySelector('.todoPopup').style = "display: flex;"
+    document.querySelector('.todoPopup').style = "display: flex;";
 
+    Ttitle.select();
 });
 
 const closePopup = document.querySelector('#cancelt');

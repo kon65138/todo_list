@@ -67,6 +67,7 @@ export function loadSidebarProjects () {
 openProjectPopupBtn.addEventListener("click", () => {
     projNameInpt.value = '';
     projectPopup.style = "display:flex;";
+    projNameInpt.select();
 })
 
 closeProjPopup.addEventListener("click", () => {

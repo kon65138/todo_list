@@ -12,7 +12,7 @@ if (!localStorage.getItem('projects')) {
     renderProj(projects[0]);
     populateStorage();
 } else {
-    loadStorage()
+    loadStorage();
     renderProj(projects[0]);
 }
 
@@ -22,10 +22,8 @@ if (!localStorage.getItem('projects')) {
 loadSidebarProjects();
 
 export function populateStorage () {
-    console.log('now population storage')
     localStorage.setItem('projects', JSON.stringify(projects));
-    console.log(JSON.parse(localStorage.getItem('projects')))
-}
+};
 
 function loadStorage () {
     let storageArr = JSON.parse(localStorage.getItem('projects'));
@@ -33,12 +31,9 @@ function loadStorage () {
         projects[i] = new project(storageArr[i].name, i);
         for (let b = 0; b < storageArr[i].todo_library.length; b++) {
             projects[i].todo_library[b] = new todo(storageArr[i].todo_library[b].name, storageArr[i].todo_library[b].description, storageArr[i].todo_library[b].dueDate, storageArr[i].todo_library[b].priority, storageArr[i].todo_library[b].checked, storageArr[i].todo_library[b].id);
-        }
-    }
-    console.log('now loading storage')
-    console.log(projects);
-    console.log(storageArr);
-}
+        };
+    };
+};
 
 
 
