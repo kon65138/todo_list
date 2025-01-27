@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script defer src="bundle.js"></script></head>
+<body>
+    <div class="projectsPopup">
+        <form id="addProject" action="/" method="/" onsubmit="event.preventDefault()">
+            <div class="projNameWrapr">
+                <label for="projName">Project Name:</label>
+                <input type="text" id="projName" name="project name" maxlength="12" required>
+            </div>
+            <div class="projPopupBtns">
+                <button id="newProj">add</button>
+                <button type="button" id="cancelProj">close</button>
+            </div>
+        </form>
+    </div>
+    <div class="todoPopup">
+        <form id="editTodo" action="/" method="/" onsubmit="event.preventDefault()" >
+            <h2>new/edit todo form</h2>
+            <div class="inptWrapr">
+                <label for="ttitle">Title:</label>
+                <input type="text" id="ttitle" name="title" maxlength="50" required>
+                <span></span>
+            </div>
+            <div class="inptWrapr">
+                <label for="tdescription">Description:</label>
+                <input type="text" id="tdescription" name="description" maxlength="150">
+                <span></span>
+            </div>
+            <div class="inptWrapr">
+                <label for="tdueDate">Due Date:</label>
+                <input type="date" id="tdueDate" name="dueDate" min="" max="2100-01-01" onkeydown="event.preventDefault()" required>
+                <span></span>
+            </div>
+            <div class="inptWrapr">
+                <label for="tpriority">Priority:</label>
+                <select name="priority" id="tpriority" required>
+                    <option value="red">High</option>
+                    <option value="yellow">Mid</option>
+                    <option value="green">Low</option>
+                </select>
+                <span></span>
+            </div>
+            <div class="inptWrapr">
+                <label for="tproject">project:</label>
+                <select name="project" id="tproject" required>
+                </select>
+            </div>
+            <div class="popupBtns">
+                <button id="newt" type="submit">Add/Edit</button>
+                <button id="cancelt" type="button" class="closeForm">Close</button>
+            </div>
+        </form>
+    </div>
+    <div class="sidebar">
+        <div class="user">Todo app</div>
+        <div class="label"><div>Sort by:</div></div>
+        <div class="sorting">
+            <button class="deadline sBtn"><div>deadline</div></button>
+            <button class="urgency sBtn"><div>urgency</div></button>
+        </div>
+        <div class="label"><div>Projects</div><button class="newProject">+</button></div>
+        <div class="projects" >
+            
+        </div>
+    </div>
+    <div class="mainContent">
+        <div class="page"></div>
+     </div>
+</body>
+</html>
